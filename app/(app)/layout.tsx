@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import React, { Key } from "react";
 import { MainLayout } from "@/components/layout/MainLayout";
-import { LayoutProviderContainer } from "@/components/layout/LayoutProviderContainer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +18,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body>
-        <LayoutProviderContainer>{children}</LayoutProviderContainer>
-      </body>
-    </html>
+    <MainLayout
+      tabs={[
+        {
+          url: "/profile",
+          label: "Profile",
+        },
+        {
+          url: "/repos",
+          label: "Repos",
+        },
+        {
+          url: "/saved-repos",
+          label: "Favorites Repos",
+        },
+      ]}
+    >
+      {children}
+    </MainLayout>
   );
 }
