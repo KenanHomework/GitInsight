@@ -18,6 +18,26 @@ html,body {
     @apply text-[#3B49DF] bg-[#c2e7ff] rounded;
 }
 
+.alert{
+    @apply w-full grid grid-cols-[25px,1fr] p-4 gap-4 text-black rounded-xl
+}
+
+.alert-info{
+    @apply bg-[#18b2f5]
+}
+
+.alert-success{
+    @apply bg-[#00b5ff]
+}
+
+.alert-warning{
+    @apply bg-[#ffbe00]
+}
+
+.alert-error{
+    @apply bg-[#ff5861]
+}
+
 .ellipsis-overflow {
     white-space: nowrap;
     overflow: hidden;
